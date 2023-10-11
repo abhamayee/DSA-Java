@@ -10,5 +10,9 @@ public class LLMain {
         list.display();
         list.insert(25, 3);
         list.display();
+        System.out.println(list.deleteFirst());
+        list.display();
+        list.deleteLast();
+        list.display();
     }
 }
