@@ -64,6 +64,17 @@ public class LL {
         return temp;
     }
 
+    public Node find(int value) {
+        Node temp = head;
+        while (temp != null) {
+            if (temp.value == value) {
+                return temp;
+            }
+            temp = temp.next;
+        }
+        return null;
+    }
+
     public int deleteLast() {
         if (size <= 1) {
             deleteFirst();
@@ -72,6 +83,21 @@ public class LL {
         int val = tail.value;
         tail = secondLast;
         tail.next = null;
+        return val;
+    }
+
+    public int delete(int index) {
+        if (index == 0) {
+            deleteFirst();
+        }
+        if (index == size-1) {
+            deleteLast();
+        }
+        Node prev = get(index-1);
+        Node temp = prev.next;
+        int val = temp.value;
+        prev.next = temp.next;
+        temp.next = null;
         return val;
     }
 
