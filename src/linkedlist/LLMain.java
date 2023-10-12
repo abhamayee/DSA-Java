@@ -28,5 +28,17 @@ public class LLMain {
         dll.display();
         dll.insertLast(25);
         dll.display();
+        dll.insert(5, 30);
+        dll.display();
+
+        //Circular Linked list
+        CircularLL cll = new CircularLL();
+        cll.insert(3);
+        cll.insert(5);
+        cll.insert(10);
+        cll.insert(15);
+        cll.display();
+        cll.delete(10);
+        cll.display();
     }
 }
