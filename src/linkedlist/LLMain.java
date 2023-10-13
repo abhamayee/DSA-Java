@@ -19,6 +19,8 @@ public class LLMain {
         list.delete(2);
         list.display();
         System.out.println("list.find(26) = " + list.find(26));
+        list.insertRec(100,2);
+        list.display();
 
         //Doubly linked list
         DoublyLL dll = new DoublyLL();
