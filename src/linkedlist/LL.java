@@ -157,4 +157,31 @@ public class LL {
         tail = node;
         tail.next = null;
     }
+
+    /* Merged two sorted linked list
+    *  1 -> 3-> 5
+    * 1 -> 2-> 8->9*/
+    public static LL merge(LL first, LL second) {
+        Node fHead = first.head;
+        Node sHead = second.head;
+        LL ans = new LL();
+        while (fHead != null && sHead != null) {
+            if (fHead.value < sHead.value) {
+                ans.insertLast(fHead.value);
+                fHead = fHead.next;
+            } else {
+                ans.insertLast(sHead.value);
+                sHead = sHead.next;
+            }
+        }
+        while (fHead != null) {
+            ans.insertLast(fHead.value);
+            fHead = fHead.next;
+        }
+        while (sHead != null) {
+            ans.insertLast(sHead.value);
+            sHead = sHead.next;
+        }
+        return ans;
+    }
 }
