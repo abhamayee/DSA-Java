@@ -184,4 +184,17 @@ public class LL {
         }
         return ans;
     }
+
+    public static boolean detectCycle(Node head) {
+        Node fast = head;
+        Node slow = head;
+        while (fast != null && fast.next != null) {
+            if (fast == slow) {
+                return true;
+            }
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        return false;
+    }
 }
